@@ -14,7 +14,10 @@ def run_indexing():
     engine = SearchEngine()
     db = VectorDB()
 
-    embeddings = [engine.get_embedding(item["description"]) for item in items]
+    print("Генерация эмбеддингов для связки Название + Описание...")
+    full_texts = [f"{item['name']}: {item['description']}" for item in items]
+    embeddings = [engine.get_embedding(text) for text in full_texts]
+
     print("embeddings созданы")
     db.create_collection(vector_size=384)
     db.upload_data(items, embeddings)

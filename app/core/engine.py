@@ -4,10 +4,12 @@ import numpy as np
 
 class SearchEngine:
     def __init__(self):
-        self.model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
-
+        model_name = 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2'
+        print(f"🔥 ЗАГРУЗКА МОДЕЛИ: {model_name}")
+        self.model = SentenceTransformer(model_name)
+        
     def get_embedding(self, text: str):
-        embedding = self.model.encode(text)
+        embedding = self.model.encode(text, normalize_embeddings=True)
         return embedding.tolist()
     
 if __name__ == "__main__":
