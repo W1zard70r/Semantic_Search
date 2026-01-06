@@ -55,7 +55,7 @@
 
 ---
 
-## 🛠 Стек технологий
+## Стек технологий
 - **ML & NLP:** PyTorch, Sentence-Transformers (`paraphrase-multilingual-MiniLM-L12-v2`).
 - **LLM Framework:** LangChain (AgentExecutor, Tool Calling).
 - **Inference Engine:** Ollama (Llama 3.2).
